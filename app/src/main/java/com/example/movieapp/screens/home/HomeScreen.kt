@@ -46,17 +46,20 @@ fun HomeScreen(navController: NavController = rememberNavController()) {
                     DropdownMenu(expanded = menu, onDismissRequest = { menu = false }) {
                         DropdownMenuItem(onClick = { /*TODO*/ }) {
                             Row {
-                                Icon(
-                                    imageVector = Icons.Default.Favorite,
-                                    contentDescription = "Favorites",
-                                    modifier = Modifier.padding(4.dp)
-                                )
-                                Text(
-                                    text = "Favorites",
-                                    modifier = Modifier
-                                        .padding(4.dp)
-                                        .width(100.dp)
-                                )
+                                IconButton(onClick = { navController.navigate(MovieScreens.FavouritesScreen.name) }) {
+                                    Icon(
+                                        imageVector = Icons.Default.Favorite,
+                                        contentDescription = "Favorites",
+                                        modifier = Modifier.padding(4.dp)
+                                    )
+                                    Text(
+                                        text = "Favorites",
+                                        modifier = Modifier
+                                            .padding(4.dp)
+                                            .width(100.dp)
+                                    )
+                                }
+
                             }
                         }
                     }

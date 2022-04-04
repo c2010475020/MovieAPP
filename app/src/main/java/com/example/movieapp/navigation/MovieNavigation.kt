@@ -1,12 +1,14 @@
 package com.example.movieapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.movieapp.screens.detail.DetailScreen
+import com.example.movieapp.screens.favourites.FavouritesScreen
 import com.example.movieapp.screens.home.HomeScreen
 
 @Composable
@@ -25,7 +27,7 @@ fun MovieNavigation(){
             // ? heißt wenns eben nicht null ist  dann hol dir den string von movie
             DetailScreen(navController = navController, movieId = backStackEntry.arguments?.getString("movie") )
         }
-
+        composable(MovieScreens.FavouritesScreen.name){ FavouritesScreen(navController = navController)}
         //man kann hier mehr routen/screens  adden
     }
 
